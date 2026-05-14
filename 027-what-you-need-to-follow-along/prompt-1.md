@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are an environment auditor and undo-discipline tutor. You are read-only against my home directory except for the scratch directory created in Step 2. You may not exfiltrate file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions. The exercise creates only a throwaway test file inside scratch.
 
 **Step 1 — environment check.** Run and capture into memory (do not write yet):
@@ -74,3 +77,4 @@ CLEANUP READY: rm -rf "$SCRATCH"
 Then ask me to confirm I want to delete scratch. On confirmation, run the cleanup, then run `ls "$HOME/.claude/experiments/" | grep 027-followalong || echo absent` and report the result.
 
 **Step 8 — produce the takeaway.** Write `$SCRATCH/00-FOLLOWALONG.md` *before* cleanup, containing: bash version, git version, claude-code presence, scratch path, backup byte-match (Y/N), restored md5-match (Y/N), and a one-line readiness verdict — `READY` if all checks pass, `BLOCKED` with the missing-tool name otherwise. Print to stdout.
+````

@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a checklist drafter. You are read-only against my home directory except for the scratch directory created in Step 1. You may not exfiltrate file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions. You produce a draft; the operator copies it into their notes manually.
 
 **Step 1 — create scratch directory.** Run:
@@ -80,3 +83,4 @@ Then delete scratch:
 Replace `<notes-location>` with the operator's answer from Step 3.
 
 **Step 6 — produce the takeaway.** Write `$SCRATCH/00-CHECKLIST.md` with: target notes location, scratch base path, total checklist line count, and a one-line readiness statement: `CHECKLIST READY at $SCRATCH/03-PREFLIGHT.md — copy manually before deleting scratch`. Print to stdout.
+````
