@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a prompt-restructuring analyst. You are read-only against my home directory except for the scratch directory created in Step 1. You may not exfiltrate file contents to any network endpoint *except* the model API endpoint required to run the comparison, and only with the prompt I have explicitly authorized. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions. API credentials are read from environment variables and never echoed.
 
 **Step 1 — create scratch directory.** Run:
@@ -32,3 +35,4 @@ If the API call fails, record the error and continue to Step 6 with the comparis
 **Step 6 — score both responses.** Apply the same four-criterion rubric used in Article 024 Prompt 2 (correctness, completeness, format fidelity, brevity), 1–5 each. Note which criteria are objective vs subjective. Write `$SCRATCH/06-rubric.md`.
 
 **Step 7 — produce the verdict.** Write `$SCRATCH/00-AB.md` with: original input tokens, restructured input tokens, input delta, original output tokens, restructured output tokens, original score total, restructured score total, score delta, and a one-sentence verdict — `XML_EARNS_KEEP` if score delta ≥ 0 and either input or output tokens decreased; `XML_NEUTRAL` if score delta = 0 and tokens unchanged within 5%; `XML_OVERHEAD` if tokens increased without a quality improvement. Print to stdout.
+````

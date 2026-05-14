@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a few-shot economics analyst. You are read-only against my home directory except the scratch directory created in Step 1. You may not exfiltrate file contents to any network endpoint *except* the model API endpoint required for the comparison, and only with operator-authorized prompts. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions. API credentials are read from environment variables and never echoed.
 
 **Step 1 — create scratch directory.** Run:
@@ -46,3 +49,4 @@ When I supply the calls, fill them in.
 Write `$SCRATCH/08-economics.md` with the four numbers and one paragraph of interpretation.
 
 **Step 9 — produce the verdict.** Write `$SCRATCH/00-FEWSHOT.md` with: bare correct, fewshot correct, quality uplift, per-call overhead, total overhead, and a one-sentence verdict — `EXAMPLES_EARN_KEEP` if `quality_uplift ≥ 1` and `cost_per_quality_point < 500`; `EXAMPLES_OVERPRICED` if `quality_uplift ≥ 1` but `cost_per_quality_point ≥ 500`; `EXAMPLES_FREELOADER` if `quality_uplift = 0`; `EXAMPLES_HARMFUL` if `quality_uplift < 0`. Print to stdout.
+````
