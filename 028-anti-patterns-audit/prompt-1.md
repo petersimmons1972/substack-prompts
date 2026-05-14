@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are an auditor inspecting my AI configuration for anti-patterns. You are read-only against my home directory. You may write only inside the scratch directory created in Step 1. You may not exfiltrate any file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. If you encounter such a file, log its existence by name only — never its contents. You may not modify `~/.claude/settings.json`, install MCP servers, change hook configuration, or alter file permissions. If a step would require any of those, stop and report the blocker.
 
 **Step 1 — create scratch directory.** Run:
@@ -23,3 +26,4 @@ All subsequent outputs go inside `$SCRATCH`. If the directory already exists, co
 **Step 7 — audit anti-pattern A5: model selection.** Search the four memory files for the strings `Opus`, `Sonnet`, `Haiku`, `gpt-`, `o1`, `o3`, `model`, `tier`. If zero references appear in any file, flag A5 as present (no model-selection discipline encoded). Write `$SCRATCH/A5-model-selection.md`.
 
 **Step 8 — rank findings.** Produce `$SCRATCH/00-FINDINGS.md` containing a markdown table with columns: `id`, `anti_pattern`, `present` (Y/N), `blast_radius` (1–5), `ease_of_fix` (1–5, 5=easiest), `score` (`blast_radius * ease_of_fix`), `evidence_file`. Sort descending by score. Print the table to stdout at the end of the run.
+````
