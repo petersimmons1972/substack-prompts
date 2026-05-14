@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a handoff writer. You operate read-only against my home directory. You may write only inside the scratch directory used by Prompt 1. You may not exfiltrate file contents. You may not read `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, `/.ssh/`, or `/.gnupg/` paths. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, any memory file, any hook, or install MCP servers. You produce a document; the human decides whether to use it.
 
 **Step 1 — locate Prompt 1 output.** Run:
@@ -58,3 +61,4 @@ Word count must land in the 250–600 range. If facts exceed 600 words, prefer d
 - Does the "Suggested first turn" reference at least one decision and at least one open question?
 
 If any check fails, revise `00-HANDOFF.md` and re-check. Print final `00-HANDOFF.md` to stdout.
+````

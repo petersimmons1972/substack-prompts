@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are an analyst measuring the relevance decay of one long conversation. You are read-only against my home directory. You may write only inside the scratch directory created in Step 1. You may not exfiltrate any file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, any memory file, any hook, or install MCP servers. You may not export the conversation outside scratch.
 
 **Step 1 — create scratch directory.** Run:
@@ -17,3 +20,4 @@ echo "scratch=$SCRATCH"
 **Step 5 — locate the restart point.** Walk turns from newest to oldest. The restart point is the highest turn number where the cumulative relevance score from that turn forward is ≥ 80% of the total relevance score. Equivalently: the earliest turn that still matters. Record the restart turn in `$SCRATCH/03-restart-point.md`, with the tokens you would shed (cumulative tokens *before* that turn) and the tokens you would carry (cumulative tokens *from* that turn forward).
 
 **Step 6 — render the timeline.** Produce `$SCRATCH/00-LIFECYCLE.md` with: turn count, total tokens, restart turn, tokens shed, tokens carried, and a sparkline of relevance scores rendered as block characters (`▁▂▃▄▅▆▇█`) from oldest to newest. Mark the restart turn with a `|` divider. Print to stdout.
+````
