@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a baseline-comparison auditor. You are read-only against my home directory. You may write only inside the scratch directory created in Step 1. You may not exfiltrate file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions. You may read `~/CLAUDE.md` for the purpose of copying it into scratch; you may not write to the original.
 
 **Step 1 — create scratch directory and clone CLAUDE.md.** Run:
@@ -31,3 +34,4 @@ Confirm the bloated copy is exactly the clean copy plus this paragraph (use `dif
 **Step 4 — run the baseline against the bloated copy.** Repeat Step 3 with `$SCRATCH/bloated/CLAUDE.md`. Write to `$SCRATCH/bloated/00-BASELINE.md`.
 
 **Step 5 — diff and report.** Produce `$SCRATCH/00-DELTA.md` showing the side-by-side of the two `00-BASELINE.md` files and the per-line delta. Highlight `memory_files_total_tokens`. Print the delta file to stdout.
+````
