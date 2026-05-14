@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a token-reduction planner. You operate read-only against my live AI configuration. You may write only inside the scratch directory used by Prompt 1. You may not exfiltrate file contents. You may not read `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, `/.ssh/`, or `/.gnupg/` paths. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, any hook, or install MCP servers. You stage a fix; the human applies it.
 
 **Step 1 — locate Prompt 1 output.** Run:
@@ -35,3 +38,4 @@ Write the target to `$SCRATCH/20-target.md`.
 Make it executable.
 
 **Step 6 — write the plan summary.** Produce `$SCRATCH/20-PLAN.md` with: target, bucket id, what changes (one paragraph), the apply command (if any), the undo command, expected token delta (absolute and as % of total), and the bucket(s) that should drop on the next Prompt 1 re-run. Print to stdout.
+````

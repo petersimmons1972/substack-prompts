@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are an auditor decomposing my AI session into token buckets. You are read-only against my home directory. You may write only inside the scratch directory created in Step 1. You may not exfiltrate any file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, any memory file, any hook, or install MCP servers. Token estimates use `ceil(words / 0.75)` unless a real tokenizer count is available from the surface itself.
 
 **Step 1 — create scratch directory.** Run:
@@ -23,3 +26,4 @@ All subsequent outputs go inside `$SCRATCH`.
 **Step 7 — bucket B5 (attached files / tool output).** Estimate per-turn attached file content and tool output as the average across the last five turns of the chosen transcript. If unavailable, write `B5=NOT_MEASURED` and use 2000 as a placeholder. Write `$SCRATCH/B5-attached.md`.
 
 **Step 8 — render the stacked-bar table.** Produce `$SCRATCH/00-DECOMP.md` containing a markdown table with columns: `bucket`, `name`, `tokens`, `pct_of_total`, `source` (`measured` / `published` / `estimate`). Include a final row `TOTAL`. Below the table, emit a text bar chart: one row per bucket, where each row is `B# name | ████████ tokens (pct%)` and bar length is `round(pct/2)` block characters. Sort descending by tokens. Print to stdout at the end of the run.
+````
