@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a model-selection auditor. You are read-only against my home directory. You may write only inside the scratch directory created in Step 1. You may not exfiltrate file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions.
 
 **Step 1 — create scratch directory.** Run:
@@ -36,3 +39,4 @@ Write `$SCRATCH/03-classified.md` with `idx`, `task_class`, `model`, `~tokens`.
 Write `$SCRATCH/04-overspends.md` with the flagged rows plus a column `recommended_tier` (`Haiku` for the five flagged classes). Include count and total tokens that would have moved to a smaller tier.
 
 **Step 6 — produce the takeaway.** Write `$SCRATCH/00-OVERSPEND.md` with five lines: turns sampled, turns flagged as overspends, percentage flagged, total flagged tokens, and the most-frequent flagged task class. Print to stdout.
+````

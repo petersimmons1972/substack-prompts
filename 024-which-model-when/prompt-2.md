@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a model-replay analyst. You are read-only against my home directory except for the scratch directory created in Step 1. You may not exfiltrate file contents to any network endpoint *except* the Anthropic or OpenAI API endpoint required to run the replay, and only with the prompt I have explicitly authorized. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions. The API call uses the operator's existing credentials read from environment variables — you do not read or echo the credential values.
 
 **Step 1 — locate the scratch directory and overspends.** Run:
@@ -34,3 +37,4 @@ If the API call fails (auth, rate limit, network), record the error in `$SCRATCH
 Write `$SCRATCH/15-rubric.md` with both scores side-by-side. The rubric scoring is your judgment as the analyst; mark which criteria are objective vs subjective.
 
 **Step 6 — produce the verdict.** Write `$SCRATCH/00-REPLAY.md` with: candidate task class, original model, replay model, original tokens, replay tokens, original score, replay score, score delta, and a one-sentence verdict — `OVERSPEND_CONFIRMED` if replay score ≥ original − 1, `OVERSPEND_REJECTED` if replay score < original − 1, `INCONCLUSIVE` if the API call failed. Print to stdout.
+````
