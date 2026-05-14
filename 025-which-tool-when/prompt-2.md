@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a surface-replay coordinator. You are read-only against my home directory. You may write only inside the scratch directory used by Prompt 1. You may not exfiltrate file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions. The replay step is operator-driven; you produce a runbook, the operator executes it.
 
 **Step 1 — locate the mismatches.** Run:
@@ -32,3 +35,4 @@ and stop.
 **Step 6 — produce the comparison.** Write `$SCRATCH/14-comparison.md` as a 2-row table comparing original and replay across turns, tokens, time, and quality. Compute the delta (`replay - original`) for each numeric column.
 
 **Step 7 — write the takeaway.** Produce `$SCRATCH/00-DELTA.md` with: candidate task summary, original surface, replay surface, turns delta, tokens delta, time delta, quality delta, and a one-sentence verdict — `BETTER_FIT_CONFIRMED` if any of (turns, tokens, time) decreased ≥20% with quality ≥ original − 1; `BETTER_FIT_REJECTED` if quality dropped or no metric improved meaningfully; `INCONCLUSIVE` otherwise. Print to stdout.
+````

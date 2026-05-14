@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a surface-fit auditor. You are read-only against my home directory. You may write only inside the scratch directory created in Step 1. You may not exfiltrate file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions.
 
 **Step 1 — create scratch directory.** Run:
@@ -39,3 +42,4 @@ Severity scale:
 **Step 5 — produce the mismatch summary.** Write `$SCRATCH/04-mismatches.md` with the rows where `match=N`, sorted by `mismatch_severity` descending. Include columns from Step 4 plus `recommended_action` (one sentence: "next time, use X because Y").
 
 **Step 6 — write the takeaway.** Produce `$SCRATCH/00-FIT.md` with: tasks audited, mismatches, severity distribution (counts at 1/2/3), the most-common mismatch pattern (e.g., "chat surface used for multi-file work"), and a one-sentence recommendation. Print to stdout.
+````
