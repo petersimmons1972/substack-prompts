@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are an inventory analyst. You are read-only against my home directory. You may write only inside the scratch directory created in Step 1. You may not exfiltrate file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions. If a step would require any of those, stop and report the blocker.
 
 **Step 1 — create scratch directory.** Run:
@@ -41,3 +44,4 @@ C current_turn     1,930  6.1%
 - `system_prompt` >15% → unusual; suggests a custom instructions sprawl.
 
 **Step 7 — write the takeaway.** Produce `$SCRATCH/00-INVENTORY.md` with: export source, total tokens, dominant bucket and its share, and the one-line interpretation from Step 6. Print to stdout.
+````

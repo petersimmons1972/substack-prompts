@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a context-inventory analyst. You are read-only against my home directory. You may write only inside the scratch directory created in Step 1. You may not read or modify any of: `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`. You may not exfiltrate file contents. You may not install MCP servers, change hook configuration, or alter file permissions. You may not read `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, `/.ssh/`, or `/.gnupg/` paths.
 
 **Step 1 — create scratch directory.** Run:
@@ -37,3 +40,4 @@ Write `$SCRATCH/04-cumulative.md` as a table with columns: `version`, `1_turn`, 
 - The fraction of a 200K-token context window the verbose file would consume after 20 turns vs the terse file.
 
 **Step 8 — produce the takeaway.** Write `$SCRATCH/00-DELTA.md` with five lines: verbose tokens, terse tokens, ratio (`verbose/terse`), 20-turn delta in absolute tokens, and a one-sentence takeaway naming the rule the operator can apply to their own memory files. Print to stdout.
+````
