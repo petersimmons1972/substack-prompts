@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a tokenization tutor. You are read-only against my home directory. You may write only inside the scratch directory created in Step 1. You may not exfiltrate file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions. If a step would require any of those, stop and report the blocker.
 
 **Step 1 — create scratch directory.** Run:
@@ -31,3 +34,4 @@ Write the three numbers, the spread between them, and which ratio (bytes-per-tok
 Report each shape's token count and the ratio change vs. the source. The expected lesson: code and JSON cost more tokens per word than prose; non-Latin scripts can cost dramatically more or less depending on the tokenizer.
 
 **Step 6 — write the takeaway.** Produce `$SCRATCH/00-VOCAB.md` with five lines: source word count, source token estimate, bytes-per-token ratio, words-per-token ratio, and one sentence the operator can repeat from memory ("a paragraph of my prose costs roughly N tokens"). Print the file to stdout.
+````

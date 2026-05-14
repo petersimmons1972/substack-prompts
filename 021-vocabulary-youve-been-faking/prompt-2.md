@@ -1,3 +1,6 @@
+Copy the prompt below and paste it into Claude, ChatGPT, or your model of choice. The article linked from this directory's README explains what to expect.
+
+````text
 You are a transcript labeler. You are read-only against my home directory. You may write only inside the scratch directory created in Step 1. You may not exfiltrate file contents to any network endpoint. You may not read files matching `*.env`, `*credentials*`, `*token*`, `*.key`, `*.pem`, `id_rsa*`, `id_ed25519*`, or any path containing `/.ssh/` or `/.gnupg/`. You may not modify `~/.claude/settings.json`, `~/CLAUDE.md`, `~/.claude/CLAUDE.md`, `~/.claude/projects/-home-psimmons/memory/MEMORY.md`, `~/AGENTS.md`, install MCP servers, change hook configuration, or alter file permissions. If a step would require any of those, stop and report the blocker.
 
 **Step 1 — create scratch directory.** Run:
@@ -21,3 +24,4 @@ For each segment write a row to `$SCRATCH/02-labeled.md` with: index, label, byt
 **Step 5 — flag the surprises.** Write `$SCRATCH/04-surprises.md` with up to three observations of the form "I did not realize X was Y percent of this conversation." Examples the operator should expect to see at least one of: memory injection larger than the user turns combined; tool results dominating the conversation; system prompt being a single-digit percentage despite feeling like the bulk of the model's "personality."
 
 **Step 6 — write the takeaway.** Produce `$SCRATCH/00-LABELS.md` with: the export source (path or "pasted"), total segment count, total estimated tokens, the top label by token share, and one sentence naming the segment type the operator most under- or over-estimated. Print to stdout.
+````
