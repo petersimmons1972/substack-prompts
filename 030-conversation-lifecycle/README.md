@@ -1,5 +1,7 @@
 # Conversation lifecycle and context decay
 
+_Why long threads degrade, when to end them deliberately, and how to hand off without losing state_
+
 Prompts referenced in [Plutarch TX](https://plutarchtx.substack.com) article **030-conversation-lifecycle**.
 
 → **Read the article:** <https://plutarchtx.substack.com/p/conversation-lifecycle>
