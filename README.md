@@ -19,3 +19,7 @@ If a prompt directory is missing or a link from an article 404s briefly, the mir
 ## License
 
 Prompts are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Use them, remix them, ship them. Attribution to Plutarch TX appreciated when republishing.
+
+## Art Showcase
+
+Original house artwork lives in [`art/`](art/README.md) — starting with *The Prompt Library*, the repo's signature piece.
