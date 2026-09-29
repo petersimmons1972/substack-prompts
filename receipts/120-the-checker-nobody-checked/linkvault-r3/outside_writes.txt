@@ -1,0 +1,16 @@
+Post-hoc scan of every tool-call input in the 82 per_run.jsonl rows (scan: ../scan_outside.py) for write targets
+(redirection, tee, Write/Edit file_path, apply_patch headers, open(...), touch, mkdir, mktemp/tempfile) outside
+the run's workdir. Hand check: r3_s55_high_r1b's hits were Read-tool calls on a nonexistent path, not writes; excluded.
+
+Runs that wrote scratch files OUTSIDE the run dir (all under /tmp or a tempfile API):
+  Sol 6 medium            0/20
+  Sol 6 high              0/6
+  Sonnet 5.5 medium       0/6
+  Sonnet 5.5 high         4/20  (r5, r7, r8, r16)
+  Sonnet 5.5 high + fix   4/10  (r1, r2, r3, r7)
+  Sonnet 5.5 medium + fix 1/10  (r6)
+  Opus 5.5 medium         6/10  (r1, r2, r4, r6, r8, r9)
+
+Reading: Sol's 0 unrequested in-repo test files is not scratch moved to /tmp; Sol verified via stdin heredocs.
+The fix paragraph cut in-repo test files (13/20 -> 1/10) but part of the scratch moved to /tmp (4/10) instead
+of vanishing. None of these /tmp files is in the deliverable; each is outside the brief's stated scope.

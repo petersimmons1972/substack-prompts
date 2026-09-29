@@ -1,0 +1,2 @@
+{"run_id":"r3_s55_high_r1","voided_at":"2026-09-28T20:06:23-04:00","reason":"claude-opus-5-5 advisor in result.modelUsage; verify_model returned true (ruling A)","replacement":"r3_s55_high_r1b"}
+{"run_id":"r3_sol6_high_r6","voided_at":"2026-09-28T20:13:21-04:00","reason":"launch exit 1: lib_ws MODEL MISMATCH -- a second codex session (model codex-auto-review, effort low, 12.7K tokens) ran in the isolated CODEX_HOME; run_harness verify_model (latest-mtime log) still returned true","replacement":"r3_sol6_high_r6b"}

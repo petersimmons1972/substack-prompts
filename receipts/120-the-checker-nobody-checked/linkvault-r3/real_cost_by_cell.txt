@@ -1,0 +1,7 @@
+claude-opus-5-5@medium         n=10 k={17: 10} real$=0.484 (range 0.383-0.549) wall=72s out=7725 [provider costUSD (list basis)]
+claude-sonnet-5-5@high         n=20 k={17: 20} real$=0.250 (range 0.189-0.326) wall=53s out=7163 [provider costUSD (list basis)]
+claude-sonnet-5-5@high+fix     n=10 k={17: 10} real$=0.224 (range 0.195-0.290) wall=48s out=5949 [provider costUSD (list basis)]
+claude-sonnet-5-5@medium       n= 6 k={17: 6} real$=0.171 (range 0.154-0.202) wall=25s out=3202 [provider costUSD (list basis)]
+claude-sonnet-5-5@medium+fix   n=10 k={17: 10} real$=0.179 (range 0.157-0.224) wall=28s out=3686 [provider costUSD (list basis)]
+gpt-6-sol@high                 n= 6 k={17: 6} real$=0.146 (range 0.128-0.171) wall=108s out=4534 [list: uncached $2, cached $0.20, output $10]
+gpt-6-sol@medium               n=20 k={17: 19, 14: 1} real$=0.113 (range 0.083-0.162) wall=80s out=3102 [list: uncached $2, cached $0.20, output $10]
